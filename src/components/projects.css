@@ -1,0 +1,131 @@
+.projects {
+  padding: 80px 20px;
+  background: #FFF6F9;
+  text-align: center;
+}
+
+.projects h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 42px;
+  color: #A28AD6;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Optional underline animation for h2 */
+.projects h2::after {
+  content: '';
+  display: block;
+  height: 4px;
+  width: 0;
+  background: #FF7F7F;
+  margin: 8px auto 0 auto;
+  border-radius: 2px;
+  transition: width 0.5s ease;
+}
+
+.projects h2:hover::after {
+  width: 60%;
+}
+
+/* Project list grid */
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+/* Individual project card */
+.project-card {
+  background: linear-gradient(135deg, #F7C6C7, #FFF6F9);
+  border-radius: 20px;
+  padding: 25px;
+  width: 100%;
+  max-width: 280px;
+  box-shadow: 0 8px 20px rgba(162,138,214,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s forwards;
+}
+
+/* Staggered animations for cards */
+.project-card:nth-child(1) { animation-delay: 0.2s; }
+.project-card:nth-child(2) { animation-delay: 0.4s; }
+.project-card:nth-child(3) { animation-delay: 0.6s; }
+
+/* Card hover effect */
+.project-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(162,138,214,0.4);
+}
+
+/* Project title */
+.project-card h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  color: #A28AD6;
+  margin-bottom: 15px;
+}
+
+/* Project description */
+.project-card p {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Project link/button */
+.project-card a {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  color: #FF7F7F;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.project-card a:hover {
+  color: #A28AD6;
+  transform: scale(1.1);
+}
+
+.project-card .btn {
+  background: linear-gradient(90deg, #A28AD6, #FF7F7F);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card .btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(162, 138, 214, 0.3);
+}
+
+.project-video {
+  width: 100%;
+  border-radius: 12px;
+  margin: 15px 0 0 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.project-video:hover {
+  transform: scale(1.02);
+}
+
+/* Card fade-up animation */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
